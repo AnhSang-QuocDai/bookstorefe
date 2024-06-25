@@ -19,7 +19,6 @@ const BookCartList: React.FC<BookCartListProps> = () => {
 		}, 0);
 		setTotalPriceProduct(total);
 		setTotalCart(cartList.length);
-	}, [cartList, setTotalCart]);
 
 	const navigation = useNavigate();
 	// Xử lý xoá sách

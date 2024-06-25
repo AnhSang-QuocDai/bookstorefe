@@ -19,11 +19,9 @@ export const checkExistEmail = async (setErrorEmail: any, email: string) => {
          setErrorEmail("Email đã tồn tại!");
          return true;
       }
-      setErrorEmail(""); // Xóa lỗi nếu email hợp lệ và chưa tồn tại
       return false;
    } catch (error) {
       console.log("Lỗi api khi gọi hàm kiểm tra email");
-      setErrorEmail("Lỗi khi kiểm tra email!");
    }
 };
 
@@ -54,12 +52,10 @@ export const checkExistUsername = async (setErrorUsername: any, username: string
 
 // Hàm check mật khẩu có đúng định dạng không
 export const checkPassword = (setErrorPassword: any, password: string) => {
-   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
    if (password === "") {
       return false;
    } else if (!passwordRegex.test(password)) {
       setErrorPassword(
-         "Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ, số và ký tự đặc biệt."
       );
       return true;
    } else {
